@@ -9,7 +9,18 @@ public class OrderService {
 
     NotificationService notificationService ;
 
+    //NotificationService KA Object using Constructor
     public OrderService(NotificationService notificationService) {
+        this.notificationService = notificationService;
+    }
+
+    //default constructor
+    public OrderService() {
+
+    }
+
+    //NotificationService KA Object using Setter
+    public void setNotificationService(NotificationService notificationService) {
         this.notificationService = notificationService;
     }
 
