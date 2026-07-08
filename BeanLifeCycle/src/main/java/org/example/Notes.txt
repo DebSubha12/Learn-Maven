@@ -4,3 +4,5 @@ Bean Defination:
 ->scope:singleton
 ->lazy:false
 ->dependency:paymentService
+
+Aware interfaces
