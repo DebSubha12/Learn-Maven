@@ -1,0 +1,6 @@
+Bean Defination:
+->beanName:orderService
+->beanClass:orderservice
+->scope:singleton
+->lazy:false
+->dependency:paymentService
