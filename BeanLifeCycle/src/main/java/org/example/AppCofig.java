@@ -7,6 +7,11 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 public class AppCofig {
     public void demo(){
-        System.out.println("demo");
+       // System.out.println("demo");
+
+//        @Bean()
+//        public cartService getCartBean(){
+//            return new cartService();
+//        }
     }
 }

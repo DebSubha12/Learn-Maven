@@ -6,3 +6,8 @@ Bean Defination:
 ->dependency:paymentService
 
 Aware interfaces
+
+Initialization callbacks
+->  InitializingBean
+->init method
+->post construct **
