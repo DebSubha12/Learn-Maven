@@ -1,0 +1,12 @@
+Bean Scopes are two types
+1.Singleton -->Eager initialization (By Default) -->Stateless
+2.prototype --> lazy initialization -->Stateful
+
+Other Scopes(Using when build web application)
+-Request
+-Session
+-Application
+
+Beans Initialization
+-Eager
+-lazy
