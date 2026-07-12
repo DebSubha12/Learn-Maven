@@ -14,7 +14,10 @@ public class PaymentGateway {
         return paymentProperties;
     }
 
-    public void setPaymentProperties(PaymentProperties paymentProperties) {
-        this.paymentProperties = paymentProperties;
+    public void print(){
+        System.out.println(getPaymentProperties().getType());
+        System.out.println(getPaymentProperties().getRetryCount());
+        System.out.println(getPaymentProperties().isEnabled());
+        System.out.println(getPaymentProperties().getTimeout());
     }
 }
