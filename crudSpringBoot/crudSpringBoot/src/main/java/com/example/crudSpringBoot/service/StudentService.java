@@ -5,6 +5,9 @@ import com.example.crudSpringBoot.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -20,9 +23,16 @@ public class StudentService {
     }
 
     public Student createStudent(Student studentReq) {
-        System.out.println("Inside Student Service");
-     Student studentResp = studentRepository.saveStudent(studentReq);
-        System.out.println("Exiting Student Service");
-      return studentResp;
+        Student studentResp = studentRepository.save(studentReq);
+     return studentResp;
+    }
+
+    //Read
+    public Student getStudent(@PathVariable Long id) {
+       Optional<Student> studentResp =  studentRepository.findById(id);
+       if(studentResp.isPresent()) {
+           return studentResp.get();
+       }
+       return null;
     }
 }

@@ -2,10 +2,8 @@ package com.example.crudSpringBoot.controller;
 
 import com.example.crudSpringBoot.entity.Student;
 import com.example.crudSpringBoot.service.StudentService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/students")
@@ -19,13 +17,21 @@ public class StudentController {
     //create student
     @PostMapping("/create")
     public String createStudent(@RequestBody Student student) {
-        System.out.println("Inside Student Controller");
+
        Student createdStudent = studentService.createStudent(student);
-        System.out.println("Exiting Student Controller");
+
        return "Student Created Successfully" ;
     }
-    //read student
 
+    //read student
+    @GetMapping("/get/{id}")
+    public ResponseEntity<Student> getStudents(@PathVariable Long id) {
+       Student studentResp = studentService.getStudent(id);
+       if(studentResp == null) {
+           return ResponseEntity.notFound().build();
+       }
+       return ResponseEntity.ok(studentResp);
+    }
     //update student
 
     //delete student
